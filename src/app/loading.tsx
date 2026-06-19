@@ -1,7 +1,12 @@
+import Loader from "@/components/ui/loading";
 import React, { Suspense } from "react";
 
 const loading = () => {
-  return <Suspense fallback={"loading"}>loading</Suspense>;
+  return (
+    <Suspense fallback={<Loader />}>
+      <Loader />
+    </Suspense>
+  );
 };
 
 export default loading;
