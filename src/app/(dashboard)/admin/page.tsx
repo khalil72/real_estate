@@ -1,20 +1,20 @@
-import { LeadPipeline } from "@/components/dashboard/lead-pipeline"
-import { RecentActivity } from "@/components/dashboard/recent-activity"
-import { StatsCards } from "@/components/dashboard/stats-cards"
-import { UpcomingTasks } from "@/components/dashboard/upcoming-tasks"
-import { PropertyCard } from "@/components/properties/property-card"
-import { PageHeader } from "@/components/shared/page-header"
-import { Button } from "@/components/ui/button"
+import { LeadPipeline } from "@/module/admin/dashboard/lead-pipeline";
+import { RecentActivity } from "@/module/admin/dashboard/recent-activity";
+import { StatsCards } from "@/module/admin/dashboard/stats-cards";
+import { UpcomingTasks } from "@/module/admin/dashboard/upcoming-tasks";
+import { PropertyCard } from "@/module/admin/properties/property-card";
+import { PageHeader } from "@/components/shared/page-header";
+import { Button } from "@/components/ui/button";
 import {
   activities,
   dashboardStats,
   deals,
   properties,
   tasks,
-} from "@/lib/mock-data"
+} from "@/lib/mock-data";
 
 export default function DashboardPage() {
-  const featuredProperties = properties.slice(0, 3)
+  const featuredProperties = properties.slice(0, 3);
 
   return (
     <div className="space-y-6">
@@ -48,7 +48,9 @@ export default function DashboardPage() {
             <h2 className="font-heading text-lg font-semibold">
               Featured Properties
             </h2>
-            <Button variant="ghost" size="sm">View all</Button>
+            <Button variant="ghost" size="sm">
+              View all
+            </Button>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {featuredProperties.map((property) => (
@@ -58,5 +60,5 @@ export default function DashboardPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

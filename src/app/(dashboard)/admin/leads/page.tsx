@@ -1,9 +1,9 @@
-import { LeadsTable } from "@/components/leads/leads-table"
-import { PageHeader } from "@/components/shared/page-header"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { leads } from "@/lib/mock-data"
-import { UserPlus } from "lucide-react"
+import { LeadsTable } from "@/module/admin/leads/leads-table";
+import { PageHeader } from "@/components/shared/page-header";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { leads } from "@/lib/mock-data";
+import { UserPlus } from "lucide-react";
 
 const leadStats = [
   { label: "New", count: leads.filter((l) => l.status === "new").length },
@@ -17,7 +17,7 @@ const leadStats = [
     ).length,
   },
   { label: "Closed", count: leads.filter((l) => l.status === "closed").length },
-]
+];
 
 export default function LeadsPage() {
   return (
@@ -50,5 +50,5 @@ export default function LeadsPage() {
 
       <LeadsTable leads={leads} />
     </div>
-  )
+  );
 }

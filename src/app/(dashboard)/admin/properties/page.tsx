@@ -1,15 +1,15 @@
-import { PropertyCard } from "@/components/properties/property-card"
-import { PageHeader } from "@/components/shared/page-header"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { properties } from "@/lib/mock-data"
-import { Filter, Plus, Search } from "lucide-react"
+import { PropertyCard } from "@/module/admin/properties/property-card";
+import { PageHeader } from "@/components/shared/page-header";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { properties } from "@/lib/mock-data";
+import { Filter, Plus, Search } from "lucide-react";
 
 export default function PropertiesPage() {
-  const available = properties.filter((p) => p.status === "available")
-  const pending = properties.filter((p) => p.status === "pending")
-  const sold = properties.filter((p) => p.status === "sold")
+  const available = properties.filter((p) => p.status === "available");
+  const pending = properties.filter((p) => p.status === "pending");
+  const sold = properties.filter((p) => p.status === "sold");
 
   return (
     <div className="space-y-6">
@@ -74,5 +74,5 @@ export default function PropertiesPage() {
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }

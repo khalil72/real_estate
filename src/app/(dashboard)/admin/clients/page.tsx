@@ -1,14 +1,14 @@
-import { ClientsTable } from "@/components/clients/clients-table"
-import { PageHeader } from "@/components/shared/page-header"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { clients } from "@/lib/mock-data"
-import { formatCurrency } from "@/lib/format"
-import { UserPlus } from "lucide-react"
+import { ClientsTable } from "@/module/admin/clients/clients-table";
+import { PageHeader } from "@/components/shared/page-header";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { clients } from "@/lib/mock-data";
+import { formatCurrency } from "@/lib/format";
+import { UserPlus } from "lucide-react";
 
 export default function ClientsPage() {
-  const totalValue = clients.reduce((sum, c) => sum + c.totalValue, 0)
-  const totalDeals = clients.reduce((sum, c) => sum + c.totalDeals, 0)
+  const totalValue = clients.reduce((sum, c) => sum + c.totalValue, 0);
+  const totalDeals = clients.reduce((sum, c) => sum + c.totalDeals, 0);
 
   return (
     <div className="space-y-6">
@@ -58,5 +58,5 @@ export default function ClientsPage() {
 
       <ClientsTable clients={clients} />
     </div>
-  )
+  );
 }

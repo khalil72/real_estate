@@ -1,18 +1,18 @@
-import { DealsTable } from "@/components/deals/deals-table"
-import { PageHeader } from "@/components/shared/page-header"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { deals } from "@/lib/mock-data"
-import { formatCurrency } from "@/lib/format"
-import { Handshake } from "lucide-react"
+import { DealsTable } from "@/module/admin/deals/deals-table";
+import { PageHeader } from "@/components/shared/page-header";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { deals } from "@/lib/mock-data";
+import { formatCurrency } from "@/lib/format";
+import { Handshake } from "lucide-react";
 
 export default function DealsPage() {
   const activeDeals = deals.filter(
     (d) => d.stage !== "closed" && d.stage !== "lost"
-  )
-  const closedDeals = deals.filter((d) => d.stage === "closed")
-  const pipelineValue = activeDeals.reduce((sum, d) => sum + d.value, 0)
-  const closedValue = closedDeals.reduce((sum, d) => sum + d.value, 0)
+  );
+  const closedDeals = deals.filter((d) => d.stage === "closed");
+  const pipelineValue = activeDeals.reduce((sum, d) => sum + d.value, 0);
+  const closedValue = closedDeals.reduce((sum, d) => sum + d.value, 0);
 
   return (
     <div className="space-y-6">
@@ -45,7 +45,9 @@ export default function DealsPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-2xl font-bold">{formatCurrency(pipelineValue)}</p>
+            <p className="text-2xl font-bold">
+              {formatCurrency(pipelineValue)}
+            </p>
           </CardContent>
         </Card>
         <Card>
@@ -62,5 +64,5 @@ export default function DealsPage() {
 
       <DealsTable deals={deals} />
     </div>
-  )
+  );
 }
