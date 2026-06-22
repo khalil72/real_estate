@@ -67,13 +67,7 @@ const HeroSection = () => {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/75" />
 
-      {/* <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 text-white text-xs md:text-sm tracking-wide">
-        <MapPin className="w-3.5 h-3.5" />
-        <span key={activeIndex} className="animate-[fadeIn_0.6s_ease]">
-          {SLIDES[activeIndex].location}
-        </span>
-      </div> */}
-
+   
       <div className="relative z-10 text-center max-w-3xl px-6">
         <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight drop-shadow-sm">
           Find Your Dream Property
