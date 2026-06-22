@@ -4,11 +4,9 @@ import { Bath, BedDouble, MapPin, Maximize2 } from "lucide-react"
 import { PropertyStatusBadge } from "@/components/shared/status-badge"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { formatFullCurrency } from "@/lib/format"
-import type { Property } from "@/types"
+import type { Property, PropertyCardProps } from "@/types"
 
-interface PropertyCardProps {
-  property: Property
-}
+
 
 export function PropertyCard({ property }: PropertyCardProps) {
   return (

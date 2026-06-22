@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { ClientNavbarMenu } from "@/data";
-import { Menu, X } from "lucide-react";
+import { Home, Menu, X } from "lucide-react";
 import Link from "next/link";
 import {
   Sheet,
@@ -18,12 +18,14 @@ const ClientHeader = () => {
   return (
     <header className="sticky top-0 z-50 border-b bg-white/90 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-6">
-        <Link href="/" className="flex flex-col">
-          <span className="text-xl font-bold text-slate-900">Meridian</span>
-          <span className="text-[10px] tracking-[4px] text-slate-500">
-            REAL ESTATE
-          </span>
-        </Link>
+        <Link href="/" className="flex items-center gap-2.5 group w-fit">
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+              <Home className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-primary text-xl font-bold tracking-tight">
+              Estate<span className="text-primary">PK</span>
+            </span>
+          </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
           {ClientNavbarMenu.map((item) => (

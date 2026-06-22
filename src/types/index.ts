@@ -4,19 +4,41 @@ export type DealStage = "prospect" | "proposal" | "negotiation" | "closed" | "lo
 export type Priority = "low" | "medium" | "high"
 
 export interface Property {
-  id: string
-  title: string
-  address: string
-  city: string
-  price: number
-  beds: number
-  baths: number
-  sqft: number
-  status: PropertyStatus
-  type: string
-  image: string
-  agent: string
-  listedAt: string
+  id: string;
+  title: string;
+  location: string;
+  price: number | string ;
+  priceLabel?: string; 
+  type: "sale" | "rent";
+  category: string; 
+  beds: number;
+  baths: number;
+  sqft: number;
+  image: string;
+  featured?: boolean;
+  tag?: string; 
+  agent?:string;
+  status?:any;
+  listedAt?:any;
+  address?:string;
+  city?:string;
+}
+
+export interface PropertyCardProps {
+  property: Property;
+  className?: string;
+  
+
+}
+export interface SectionProps {
+  id: string;
+  eyebrow: string;
+  heading: string;
+  subheading: string;
+  ctaLabel?: string;
+  onCta?: () => void;
+  bg?: string;
+  children: React.ReactNode;
 }
 
 export interface Lead {
@@ -84,3 +106,45 @@ export interface DashboardStats {
   dealsChange: number
   revenueChange: number
 }
+export type ProjectStatus = "upcoming" | "under-construction" | "completed" | "open";
+export interface Project {
+  id: string;
+  name: string;
+  developer: string;
+  location: string;
+  city: string;
+  priceRange: string;       
+  status: ProjectStatus;
+  completionDate: string;   
+  units: number;
+  image: string;
+  logo?: string;            
+  highlight?: string;     
+}
+
+export interface ProjectCardProps {
+  project: Project;
+  className?: string;
+}
+export interface Agent {
+  id: string;
+  name: string;
+  title: string;         
+  agency: string;
+  city: string;
+  phone: string;
+  email: string;
+  rating: number;          
+  reviews: number;
+  listings: number;
+  sold: number;
+  avatar: string;
+  verified?: boolean;
+  specialties?: string[];  
+}
+
+export interface AgentCardProps {
+  agent: Agent;
+  className?: string;
+}
+
