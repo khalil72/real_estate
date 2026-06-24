@@ -88,7 +88,7 @@ const HeroSection = () => {
       </div>
 
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-full max-w-5xl px-6">
-        <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-4 grid grid-cols-1 md:grid-cols-4 gap-3">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl p-4 grid grid-cols-1 md:grid-cols-4 items-center gap-3">
           <Select>
             <SelectTrigger className="h-12 w-full">
               <SelectValue placeholder="Location" />

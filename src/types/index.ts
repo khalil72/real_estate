@@ -147,4 +147,7 @@ export interface AgentCardProps {
   agent: Agent;
   className?: string;
 }
-
+export interface SlideUpSectionProps {
+  children: React.ReactNode;
+  delay?: number;
+}

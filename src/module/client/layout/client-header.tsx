@@ -58,7 +58,7 @@ const ClientHeader = () => {
         <div className="lg:hidden">
           <Sheet>
             <SheetTrigger>
-              <Button variant="ghost" size="icon" className="">
+              <Button variant="ghost" size="icon" >
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
