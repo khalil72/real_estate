@@ -32,9 +32,8 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <TooltipProvider>
-          <ClientHeader />
           {children}
-          <ClientFooter />
+         
         </TooltipProvider>
       </body>
     </html>
