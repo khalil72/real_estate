@@ -1,7 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-const publicRoutes = ["/", "/auth/register", "/auth/forgot-password" , "/auth/login"];
+const publicRoutes = ["/", "/auth/register", "/auth/forgot-password", "/auth/login" , "/property" ,"/agent"];
 
 function isPublicRoute(pathname: string): boolean {
   return publicRoutes.includes(pathname);
@@ -27,7 +27,38 @@ export async function proxy(request: NextRequest) {
 
   // Refresh session
   await supabase.auth.getUser()
-  return supabaseResponse
+
+  const { pathname } = request.nextUrl;
+
+  if (isPublicRoute(pathname)) {
+    return supabaseResponse;
+  }
+
+  const token = request.cookies.get("Token")?.value;
+  const role = request.cookies.get("role")?.value;
+
+  if (!token) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
+  // Role-based access control
+  if (pathname.startsWith("/admin") && role !== "admin") {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
+  if (pathname.startsWith("/manager") && role !== "manager") {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
+  if (pathname.startsWith("/agent") && role !== "agent") {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
+  if (pathname.startsWith("/user") && role !== "user") {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
+  return supabaseResponse;
 }
 
 export const config = {
